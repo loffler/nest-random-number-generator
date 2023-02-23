@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 import { RandService } from './rand.service';
 
@@ -9,7 +9,7 @@ export class AppController {
     private randService: RandService,
   ) {}
 
-  @Get('/reset')
+  @Post('/reset')
   async resetGenerator() {
     return await this.randService.resetGenerator();
   }
